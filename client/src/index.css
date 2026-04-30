@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  /* Light theme variables */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f4f5; /* zinc-100 */
+  --text-primary: #000000;
+  --text-secondary: #52525b; /* zinc-600 */
+  --border-subtle: rgba(0, 0, 0, 0.1);
+  --border-strong: rgba(0, 0, 0, 0.2);
+  --btn-bg: #000000;
+  --btn-text: #ffffff;
+  --btn-bg-hover: #3f3f46;
+  --icon-bg: #ffffff;
+}
+
+:root.dark {
+  /* Dark theme variables */
+  --bg-primary: #000000;
+  --bg-secondary: #18181b; /* zinc-900 */
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af; /* gray-400 */
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --btn-bg: #ffffff;
+  --btn-text: #000000;
+  --btn-bg-hover: #e5e7eb;
+  --icon-bg: #18181b;
+}
+
+@theme {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+  --color-btn-bg: var(--btn-bg);
+  --color-btn-text: var(--btn-text);
+  --color-btn-hover: var(--btn-bg-hover);
+  --color-icon-bg: var(--icon-bg);
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
