@@ -1,9 +1,10 @@
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import heroImage from '../../../assets/hero_image.png';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-bg-primary">
+    <section id="home" className="relative pt-6 pb-20 lg:pt-16 lg:pb-10 overflow-hidden bg-bg-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
           <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
@@ -22,13 +23,19 @@ const Hero = () => {
             </p>
             <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-btn-text bg-btn-bg hover:bg-btn-hover md:py-4 md:text-lg md:px-10 transition-all duration-300 hover:scale-105">
+                <Link
+                  to="/login"
+                  className="flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-btn-text bg-btn-bg hover:bg-btn-hover md:py-4 md:text-lg md:px-10 transition-all duration-300 hover:scale-105"
+                >
                   Start Free Trial
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </button>
-                <button className="flex items-center justify-center px-8 py-4 border border-border-strong text-base font-medium rounded-full text-text-primary hover:bg-border-subtle md:py-4 md:text-lg md:px-10 transition-all duration-300">
+                </Link>
+                <Link
+                  to="/login"
+                  className="flex items-center justify-center px-8 py-4 border border-border-strong text-base font-medium rounded-full text-text-primary hover:bg-border-subtle md:py-4 md:text-lg md:px-10 transition-all duration-300"
+                >
                   View Demo
-                </button>
+                </Link>
               </div>
             </div>
           </div>

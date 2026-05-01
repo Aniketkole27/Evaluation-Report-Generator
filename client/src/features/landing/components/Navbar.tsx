@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
@@ -22,9 +23,12 @@ const Navbar = () => {
           </div>
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle />
-            <button className="bg-btn-bg text-btn-text px-5 py-2 rounded-full font-medium text-sm hover:bg-btn-hover transition-colors">
+            <Link 
+              to="/login"
+              className="bg-btn-bg text-btn-text px-5 py-2 rounded-full font-medium text-sm hover:bg-btn-hover transition-colors"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
           <div className="-mr-2 flex items-center md:hidden space-x-2">
             <ThemeToggle />
@@ -46,9 +50,12 @@ const Navbar = () => {
             <a href="#about" className="text-text-secondary hover:text-text-primary block px-3 py-2 rounded-md text-base font-medium">About</a>
             <a href="#start" className="text-text-secondary hover:text-text-primary block px-3 py-2 rounded-md text-base font-medium">How it works</a>
             <a href="#pricing" className="text-text-secondary hover:text-text-primary block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
-            <button className="w-full text-left bg-btn-bg text-btn-text mt-4 px-3 py-2 rounded-md font-medium text-base hover:bg-btn-hover transition-colors">
+            <Link 
+              to="/login"
+              className="w-full text-left bg-btn-bg text-btn-text mt-4 px-3 py-2 rounded-md font-medium text-base hover:bg-btn-hover transition-colors inline-block"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
         </div>
       )}

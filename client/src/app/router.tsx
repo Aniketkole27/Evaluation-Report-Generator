@@ -1,29 +1,22 @@
-import { createBrowserRouter } from "react-router-dom";
-import PublicLayout from "../layouts/PublicLayout";
-import AppLayout from "../layouts/AppLayout";
+import { createBrowserRouter } from 'react-router-dom';
+import { publicRoutes } from './routes/public';
+import { appRoutes } from './routes/app';
 
-import LandingPage from "../pages/LandingPage";
-// import LoginPage from "@/pages/LoginPage";
-// import JoinSessionPage from "@/pages/JoinSessionPage";
-
-// import ExamPage from "@/features/exam/pages/ExamPage";
-// import InterviewPage from "@/features/interview/pages/InterviewPage";
-
-
+/**
+ * Main Router configuration
+ * We split routes into public and app (protected) for better maintainability.
+ * Standard practices followed:
+ * 1. Modular route definitions
+ * 2. Layout-based nesting
+ * 3. Role-based protection
+ * 4. Centralized path constants
+ */
 export const router = createBrowserRouter([
+    ...publicRoutes,
+    appRoutes,
+    // Catch-all route for 404
     {
-        element: <PublicLayout />,
-        children: [
-            { path: "/", element: <LandingPage /> },
-            // { path: "/login", element: <LoginPage /> },
-            // { path: "/join/:code", element: <JoinSessionPage /> }
-        ]
+        path: '*',
+        element: <div className="h-screen flex items-center justify-center">404 - Page Not Found</div>,
     },
-    {
-        element: <AppLayout />,
-        children: [
-            // { path: "/exam/:id", element: <ExamPage /> },
-            // { path: "/interview/:id", element: <InterviewPage /> }
-        ]
-    }
 ]);

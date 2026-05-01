@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Pricing = () => {
   const tiers = [
@@ -75,15 +76,16 @@ const Pricing = () => {
                 ))}
               </ul>
               
-              <button
-                className={`mt-auto w-full py-4 px-8 border rounded-full text-center text-base font-medium transition-colors ${
+              <Link
+                to="/login"
+                className={`mt-auto w-full py-4 px-8 border rounded-full text-center text-base font-medium transition-colors inline-block ${
                   tier.popular
                     ? 'bg-btn-bg text-btn-text hover:bg-btn-hover border-transparent'
                     : 'bg-transparent text-text-primary border-border-strong hover:bg-bg-secondary'
                 }`}
               >
                 {tier.cta}
-              </button>
+              </Link>
             </div>
           ))}
         </div>
